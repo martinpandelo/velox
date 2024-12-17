@@ -1,0 +1,13 @@
+<ngb-carousel *ngIf="items" class="homeCarousel">
+    <ng-template ngbSlide *ngFor="let item of items">
+        <div class="picsum-img-wrapper">
+            <picture>
+                <source [srcset]="item.image" media="(min-width: 600px)">
+                <img [src]="item.imageMobile" class="d-block w-100" alt="{{ item.caption }}" />
+            </picture>
+        </div>
+        <div class="carousel-caption">
+            <h3>{{ item.caption | uppercase }}</h3>
+        </div>
+    </ng-template>
+</ngb-carousel>
